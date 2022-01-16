@@ -34,3 +34,5 @@ Utility Apps:
 
  The description of each is included in the app!
  The main source code of these games will be uploaded to the repository, but some utility/helper class's source code files might not be uploaded due to the size of the project.
+Download the application .zip file from here:
+https://drive.google.com/file/d/1BZL-epJV8VlgO3mau7qkBkUe4-tFHUQC/view?usp=sharing
