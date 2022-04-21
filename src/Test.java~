@@ -1,0 +1,12 @@
+public class Test
+{
+final String s;
+{}
+public Test()
+{
+    
+final int i;
+i=5;
+}
+
+}

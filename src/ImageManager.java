@@ -1,0 +1,85 @@
+import java.util.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import javax.imageio.ImageIO;
+@SuppressWarnings("unused")
+public class ImageManager implements utilities.Helper
+{
+public static Image nr_1;
+public static Image ck_1;
+public static Image np_1;
+public static Image qa_1;
+public static Image mt_1;
+public static Image ws_1;
+public static Image chk_1;
+public static Image msw_1;
+public static void main(String[] args)
+{
+  Image temp;
+  Graphics ref;
+  final Frame awt_comp=new Frame("Initializing app..");
+  awt_comp.setSize(0,0);
+  awt_comp.setResizable(false);
+  awt_comp.setVisible(true);
+  temp=awt_comp.createImage(200,200);
+  ref=temp.getGraphics();
+  ref.setColor(Color.CYAN);
+  ref.fillRect(0,0,200,200);
+  ref.setColor(Color.BLACK);
+  ref.setFont(new Font("algerian",Font.BOLD,100));
+  ref.drawString("8",50,100);
+  nr_1=temp;
+  temp=awt_comp.createImage(100,100);
+  ref=temp.getGraphics();
+  ref.setColor(Color.RED);
+  ref.fillRect(0,0,100,50);
+  ref.setColor(Color.CYAN);
+  ref.fillRect(0,50,100,50);
+  ref.drawRect(0,0,300,300);
+  ck_1=temp;
+  temp=awt_comp.createImage(150,150);
+  ref=temp.getGraphics();
+  ref.setColor(Color.ORANGE);
+  ref.fillArc(0,0,150,150,0,270);
+  ref.setColor(Color.CYAN);
+  ref.fillRect(50,50,50,50);
+  ref.setColor(Color.RED);
+  ref.draw3DRect(30,30,100,100,false);
+  np_1=temp;
+  temp=awt_comp.createImage(200,200);
+  ref=temp.getGraphics();
+  ref.setColor(Color.CYAN);
+  ref.fillPolygon(new int[]{0,70,130,180,140,60},new int[]{100,50,170,190,90,156},6);
+  qa_1=temp;
+  temp=awt_comp.createImage(300,300);
+  ref=temp.getGraphics();
+  ref.setColor(Color.CYAN);
+  ref.fillRect(0,50,200,150);
+  ref.setColor(Color.GREEN);
+  ref.fillRect(30,70,150,150);
+  ref.drawString("X O",150,150);
+  mt_1=temp;
+  temp=awt_comp.createImage(250,250);
+  ref=temp.getGraphics();
+  ref.drawString("SEARCH!",50,50);
+  ref.setColor(Color.BLUE);
+  ref.fillRect(0,0,250,250);
+  ws_1=temp;
+  temp=awt_comp.createImage(200,200);
+  ref=temp.getGraphics();
+  ref.setColor(Color.RED);
+  ref.draw3DRect(50, 50, 100, 100, true);
+  ref.setColor(Color.BLACK);
+  ref.drawString("CHECKERS",20,20);
+  chk_1=temp;
+  temp=awt_comp.createImage(200,200);
+  ref=temp.getGraphics();
+  ref.drawString("M",50,50);
+  ref.setColor(Color.RED);
+  ref.fillRect(0, 0, 200, 200);
+  msw_1=temp;
+  awt_comp.setVisible(false);
+  awt_comp.dispose();
+  }
+}

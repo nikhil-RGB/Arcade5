@@ -1,0 +1,120 @@
+//to create a program which allows a player to play checkers with a friend or against the computer
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.border.Border;
+@SuppressWarnings("unused")
+public final class Checkers 
+{
+private JFrame frm;	
+private JPanel panel;
+private JButton[][] board;
+protected static final  Image rc;
+protected static final  Image bc;
+static
+{
+	Frame awt_compo=new Frame("Checkers initialization");
+    awt_compo.setSize(0,0);
+    awt_compo.setResizable(false);
+    awt_compo.setVisible(true);
+    Image mm=awt_compo.createImage(50,50);
+    Graphics temp=mm.getGraphics();
+    temp.setColor(Color.BLACK);
+    temp.fillRect(0, 0, 50, 50);
+    temp.setColor(Color.RED);
+    temp.fillOval(0, 0, 50, 50);
+    temp.setColor(Color.ORANGE);
+    temp.fillOval(12,12,25,25);
+    rc=mm;
+    mm=awt_compo.createImage(50,50);
+    temp=mm.getGraphics();
+    temp.setColor(Color.BLACK);
+    temp.fillRect(0, 0, 50, 50);
+    temp.setColor(Color.GRAY);
+    temp.fillOval(0,0,50,50);
+    temp.setColor(Color.WHITE);
+    temp.fillOval(12, 12, 25,25);
+    bc=mm;
+    awt_compo.setVisible(false);
+    awt_compo.dispose();
+}
+  public Checkers()
+  {
+	 frm=new JFrame("Let's play checkers");
+	 panel=new JPanel();
+	 panel.setBackground(Color.BLACK);
+	 panel.setLayout(new GridLayout(8,8));
+	 board=new JButton[8][8];
+	 Color q=Color.WHITE;
+	 for(int i=0;i<8;++i) 
+	 {  
+		 for(int j=0;j<8;++j)
+		 {  
+			 if(j==0)
+			 {if(i%2==0) {q=Color.WHITE;}
+			 else 
+			 {
+			q=Color.black;	 
+		     }
+			 }
+			 else 
+			 {
+				 if(q.equals(Color.BLACK)) {q=Color.WHITE;}
+				 else {q=Color.BLACK;}
+				 
+			 }
+		  	 board[i][j]=new JButton("");
+			 board[i][j].setActionCommand(i+" "+j);
+			 board[i][j].setBackground(q);
+			 panel.add(board[i][j]);			 
+		 }
+		 
+	 }
+	  this.fillBoard();
+	  frm.add(panel);
+	  frm.setSize(1000, 1000);
+	  frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  frm.setVisible(true);
+  }
+  private void fillBoard()
+  {
+	ImageIcon[] arr=new ImageIcon[] {new ImageIcon(rc),new ImageIcon(bc)};
+	int x=12;  
+	String s="RC";
+	int i=0;int j=0;
+	for(int i1=0;i1<2;++i1)
+	{
+	PEWDS:
+	{
+	for(;i<8;++i)
+	{
+	for(;j<8;++j)	
+	{
+	if(board[i][j].getBackground()==Color.BLACK)	
+	{
+		
+	board[i][j].setIcon(arr[i1]);
+	 board[i][j].setText(s);
+	 board[i][j].setHorizontalTextPosition(SwingConstants.CENTER);
+	--x;
+	}
+	}
+	if(x<=0) {break PEWDS;}
+	}
+	}
+	x=12;
+	s="BC";
+	i=5;j=0;
+	}
+  }
+	public static void main(String[] args) 
+	{
+		SwingUtilities.invokeLater(()->new Checkers());
+
+	}
+	
+
+}
