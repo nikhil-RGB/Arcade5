@@ -5,8 +5,8 @@ import java.lang.reflect.*;
 import javax.swing.border.*;
 public class ApplicationManager implements utilities.Helper
 {   
-	public static String email="bleach.ichigo.anime@gmail.com";
-	public static String url="https://bleachichigoanime.wixsite.com/website";
+	public static String email="javakingxi@gmail.com";
+	public static String url="https://github.com/nikhil-RGB";
 	public static String[] tips= {"<html>Click here to play Cross n Knots<br>"
 			+ "Your standard X and O game is here!","<html>Click here to play"
 					+ "a quiz game i.e a game where you create quizzes for your<br>"
